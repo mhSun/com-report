@@ -6,124 +6,36 @@
     <!-- 为了确保适当的绘制和触屏缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>数库云</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../assets/css/app.css">
 </head>
 <body>
-    <header></header>
     <div class="container">
-    	<div class="row">
-            <!-- 左侧导航栏 -->
-            <div id="nav" class="col-sm-3 bg-info nav-section">
-                <!-- 导航栏头部 -->
-                <div class="nav-header">nav-head</div>
-                <!-- 时间段选择 -->
-                <div id="timeSection" class="time-section">
-                    <!-- time section button -->
-                    <div class="btn-group form-group">
-                        <button type="button" class="btn btn-info time-value" time="1">10月20日 - 10月24日</button>
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only">Time Section Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu list-group" role="menu">
-                            <li class="dropdown-menu-list time-item" time="1">10月20日 - 10月24日</li>
-                            <li class="divider"></li>
-                            <li class="dropdown-menu-list time-item" time="2">10月13日 - 10月17日</li>
-                            <li class="divider"></li>
-                            <li class="dropdown-menu-list time-item" time="3">10月06日 - 10月10日</li>
-                            <li class="divider"></li>
-                            <li class="dropdown-menu-list time-item" time="4">09月29日 - 10月03日</li>
-                            <li class="divider"></li>
-                            <li class="dropdown-menu-list time-item" time="5">09月22日 - 09月26日</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 用户搜索 -->
-                <div class="form-group">
-                    <label class="sr-only">Name Search</label>
-                    <input type="text" class="form-control user-search" placeholder=" Search...">
-                </div>
-                <!-- 用户列表 -->
-                <div id="userSection" class="user-section">
-                    <!-- user list -->
-                    <ul class="list-group user-list">
-                        <li class="list-group-item user-item" user="1" current>
-                            menghua.sun
-                            <span class="badge">1</span>
-                        </li>
-                        <li class="list-group-item user-item" user="2">
-                            menghua.sun
-                            <span class="badge">4</span>
-                        </li>
-                        <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                        <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                         <li class="list-group-item user-item" user="3">
-                            menghua.sun
-                            <span class="badge">14</span>
-                        </li>
-                        <div style="clear:both;"></div>
-                    </ul>
-                </div>
-                <!-- 工具按钮 -->
-                <div class="nav-footer">
-                    <ul class="list-unstyled tool-list">
-                        <li class="nav-tool-item nav-tool-refresh">
-                            <span class="glyphicon glyphicon-refresh"></span>
-                            <span class="glyphicon-class">Refresh</span>
-                        </li>
-                    </ul>
+        <div class="user-module">
+            <header>ChinaScope</header>
+            <div class="search user-search">
+                <div>
+                    <input text="text" placeholder="搜索..."/>
                 </div>
             </div>
-            <!-- 右侧时间列表栏 -->
-            <div id="note" class="col-sm-9 well note-section">
-                <ul class="list-group">
-                    <li class="list-group-item">事件一</li>
-                    <li class="list-group-item">事件二</li>
-                    <li class="list-group-item">事件三</li>
+            <div class="user-list">
+                <ul class="unstyle">
+                    <li class="user-item">
+                        <label>menghua.sun</label>
+                    </li>
+                    <li class="user-item">
+                        <label>menghua.sun</label>
+                    </li>
                 </ul>
             </div>
         </div>
+        <div class="event-module absolute">
+            <header>日期选择，默认本周</header>
+        </div>
+        <div class="absolute note-module">
+            <header></header>
+        </div>
 	</div>
-    <footer></footer>
 
     <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
