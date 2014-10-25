@@ -3,6 +3,43 @@
  */
 $(function(){
 
+	$(".user-search input").change(function(event) {
+		/* Act on the event */
+		var search = $(".user-search input").val();
+		var user_list = $(".user-item");
+
+		if (search) {
+			var reg = new RegExp(search);
+			user_list.each(function(){
+				if(reg.test($(this).text())){
+					$(this).removeClass('hide');
+				} else {
+					$(this).addClass('hide');
+				}
+			});
+		} else {
+			user_list.removeClass('hide');
+		}
+
+		refresh_event();
+	});
+
+	$(".user-item").click(function(event) {
+		/* Act on the event */
+		$(".user-item[current]").removeAttr("current");
+		$(this).attr('current', '');
+
+		refresh_event();
+	});
+
+	$(".event-item").click(function(event) {
+		/* Act on the event */
+		$(".event-item[current]").removeAttr("current");
+		$(this).attr('current', '');
+
+		refresh_note();
+	});
+
 	$(".time-item").click(function(event) {
 		/* Act on the event */
 		var item = $(this);
@@ -14,40 +51,23 @@ $(function(){
 			button.text(text);
 			button.attr("time", time);
 
-			refresh_name();
+			refresh_event();
 		}
 	});
 
-	$(".user-search").change(function(event) {
-		/* Act on the event */
-		refresh_name();
-	});
+	function refresh_event() {
+		var tid = $(".time-text").attr("tid");
+		var uid = $(".user-item[current]").attr("uid");
 
-	$(".user-item").click(function(event) {
-		/* Act on the event */
-		$(".user-item[current]").removeAttr("current");
-		$(this).attr('current', '');
+		console.log("刷新事件列表 - " + uid);
 
-		refresh_node();
-	});
-
-	$(".nav-tool-refresh").click(function(event) {
-		/* Act on the event */
-		refresh_name();
-	});
-
-	function refresh_name () {
-		var time = $(".time-value").attr("time");
-		var search = $(".user-search").val();
-
-		console.log("刷新用户列表 - " + time + " - " + search);
-
-		refresh_node();
+		refresh_note();
 	}
 
-	function refresh_node () {
-		var user = $(".user-item[current]").attr("user");
+	function refresh_note() {
+		var eid = $(".event-item[current]").attr("eid");
 
-		console.log("刷新事件列表 - "+user);
+		console.log("刷新事件内容 - " + eid);
 	}
+
 });
