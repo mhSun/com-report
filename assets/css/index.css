@@ -160,26 +160,32 @@ body
 	bottom: 0;
 	left: 0;
 }
+.note-mode
+{
+	width: 150px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
 .note-time
 {
-	width: 200px;
-	height: 100%;
 	font-size: 21px;
 	font-weight: 400;
 	line-height: 50px;
 	text-align: center;
 }
-.time-text
+.time-label
 {
 	display: inline-block;
 	margin: 0 auto;
 	padding-right: 25px;
 }
-.time-text:hover
+.time-label:hover
 {
 	color: rgb(209,141,6);
 }
-.time-text:after
+.time-label:after
 {
 	content: "Y";
 	font-size: 17px;
@@ -192,17 +198,24 @@ body
 }
 .note-new
 {
+	width: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.new-label
+{
 	width: 40px;
 	height: 33px;
-	position: absolute;
-	top: 8px;
-	right: 5px;
+	display: inline-block;
+	margin-top: 5px;
 	background-size: 108px 591px;
     background-image: url('../img/packed-1@2x.png');
     background-position: -42px -304px;
     background-repeat: no-repeat;
 }
-.note-new:hover
+.new-label:hover
 {
 	background-position: -42px -346px;
 }
@@ -291,7 +304,11 @@ body
 }
 .note-item
 {
-
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 .item-time
 {
@@ -303,6 +320,7 @@ body
 .item-title, .item-content, .item-progress, .item-risk
 {
 	height: auto;
+	min-height: 20%;
 	position: relative;
 	padding: 0 8px;
 }
@@ -319,10 +337,14 @@ body
 	font-style:italic;
 	font-weight: 600;
 	font-size: 15px;
-	line-height: 22px;
+	line-height: 25px;
 }
 .edit-title, .edit-content, .edit-progress, .edit-risk
 {
-	min-height: 150px;
-	text-indent: 45px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-indent: 48px;
 }
