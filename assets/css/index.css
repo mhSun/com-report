@@ -21,7 +21,7 @@ body
 	background-color: white;
 	overflow: hidden;
 }
-.user-module, .event-module, .note-module
+.user-module, .note-module
 {
 	position: absolute !important;
 	top: 0;
@@ -29,13 +29,13 @@ body
 	bottom: 0;
 	left: 0;
 }
-.user-module>header, .event-module>header, .note-module>header
+.user-module>header, .note-module>header
 {
 	width: 100%;
 	height: 50px;
 	border-bottom: 1px solid #a3c3db;
 }
-.user-list, .event-list
+.user-list, .one-list
 {
 	position: absolute;
 	top: 51px;
@@ -43,7 +43,7 @@ body
 	bottom: 0;
 	left: 0;
 }
-.user-list ul, .event-list ul
+.user-list ul, .one-list ul
 {
 	width: 100%;
 	height: 100%;
@@ -136,14 +136,44 @@ body
 	font-size: 20px;
 	font-weight: 400;
 }
+/* 记事本模块 */
+.note-module
+{
+	left: 250px;
+	background-image: url(../img/bg-02.png);
+	background-repeat: repeat;
+}
+.note-module>header
+{
+	position: relative;
+}
+.note-module label
+{
+	font-family: cursive;
+	color: #e19807;
+}
+.note-body
+{
+	position: absolute;
+	top: 51px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.note-time
+{
+	width: 200px;
+	height: 100%;
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 50px;
+	text-align: center;
+}
 .time-text
 {
-	color: rgb(226,158,19);
 	display: inline-block;
-	position: relative;
-	top: -50px;	
-	padding-right: 22px;
-	margin: 10px auto 0 auto;
+	margin: 0 auto;
+	padding-right: 25px;
 }
 .time-text:hover
 {
@@ -154,39 +184,13 @@ body
 	content: "Y";
 	font-size: 17px;
 	line-height: 1em;
-	display: inline-block;
 	position: absolute;
-	top: 11px;
-	right: 0;
-	width: 17px;
-	height: 9px;
+	top: 19px;
+	height: 11px;
 	overflow-y: hidden; 
+	margin-left: 10px;
 }
-/* 事件列表 */
-.event-module
-{
-	width: 299px;
-	left: 250px;
-	border-right: 1px solid #dadcda;
-	background-image: url(../img/bg-02.png);
-	background-repeat: repeat;
-}
-.event-module>header
-{
-	overflow: hidden;
-	text-align: center;
-	background-color: rgba(255,244,198,0.37);
-}
-.event-time
-{
-	width: 200px;
-	height: 100%;
-	font-size: 21px;
-	font-weight: 400;
-	line-height: 30px;
-	margin-top: 50px;
-}
-.event-new
+.note-new
 {
 	width: 40px;
 	height: 33px;
@@ -198,18 +202,29 @@ body
     background-position: -42px -304px;
     background-repeat: no-repeat;
 }
-.event-new:hover
+.note-new:hover
 {
 	background-position: -42px -346px;
 }
+/* 事件列表 */
 .event-list
 {
+	width: 249px;
 	position: absolute;
-	top: 51px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	border-right: 1px solid #c2c4c5;
+}
+.event-list>ul
+{
+	position: absolute;
+	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(255,244,198,0.37);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 .event-item
 {
@@ -253,55 +268,61 @@ body
 	left: 0;
 	border-bottom: 1px solid rgb(231,222,146);
 }
-/* 记事本模块 */
-.note-module
-{
-	left: 550px;
-	background-image: url(../img/bg-02.png);
-	background-repeat: repeat;
-}
-.note-module label
-{
-	font-family: cursive;
-	color: #e19807;
-}
-.note-body
+/* 笔记本列表 */
+.note-list
 {
 	position: absolute;
-	top: 51px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 250px;
+	font-size: 17px;
+	line-height: 1.7em;
+}
+.note-list>ul
+{
+	position: absolute;
+	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-.note-time
+.note-item
+{
+
+}
+.item-time
 {
 	height: 35px;
 	padding-right: 15px;
 	text-align: right;
 	line-height: 35px;
 }
-.note-title, .note-content, .note-progress, .note-risk
+.item-title, .item-content, .item-progress, .item-risk
 {
 	height: auto;
-	line-height: 1.4em;
+	position: relative;
 	padding: 0 8px;
 }
-.note-title>label, .note-content>label, .note-progress>label, .note-risk>label
+.item-title
+{
+	margin-top: 20px;
+}
+.item-title>label, .item-content>label, .item-progress>label, .item-risk>label
 {
 	display: inline-block;
-	height: 30px;
-	line-height: 30px;
+	position: absolute;
+	top: 0;
+	left: 8px;
+	font-style:italic;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 22px;
 }
-.edit-title
+.edit-title, .edit-content, .edit-progress, .edit-risk
 {
-	min-height: 35px;
-	font-size: 24px;
-	line-height: 35px;
+	min-height: 150px;
+	text-indent: 45px;
 }
-.edit-content, .edit-progress, .edit-risk
-{
-	min-height: 100px;
-}
-
