@@ -160,26 +160,23 @@ body
 	bottom: 0;
 	left: 0;
 }
-.note-mode
-{
-	width: 150px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-}
 .note-time
 {
+	height: 100%;
 	font-size: 21px;
 	font-weight: 400;
-	line-height: 50px;
 	text-align: center;
 }
 .time-label
 {
 	display: inline-block;
-	margin: 0 auto;
-	padding-right: 25px;
+	margin: 10px auto 0 auto;
+	padding: 0 10px 5px 10px;
+	border-right: 1px solid #e19807;
+	border-bottom: 1px solid #e19807;
+	border-left: 1px solid #e19807;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 .time-label:hover
 {
@@ -188,10 +185,9 @@ body
 .time-label:after
 {
 	content: "Y";
+	display: inline-block;
 	font-size: 17px;
 	line-height: 1em;
-	position: absolute;
-	top: 19px;
 	height: 11px;
 	overflow-y: hidden; 
 	margin-left: 10px;
@@ -219,68 +215,6 @@ body
 {
 	background-position: -42px -346px;
 }
-/* 事件列表 */
-.event-list
-{
-	width: 249px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	border-right: 1px solid #c2c4c5;
-}
-.event-list>ul
-{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-.event-item
-{
-	height: 48px;
-	position: relative;
-}
-.event-item>label
-{
-	display: block;
-	position: absolute;
-	left: 20px;
-	line-height: 48px;
-	font-size: 18px;
-	color: rgb(51, 46, 35);
-}
-.event-item:after
-{
-	content: "";
-	position: absolute;
-	right: 0px;
-    bottom: 0px;
-    left: 15px;
-    border-bottom: 1px dashed rgb(213,204,156);
-}
-.event-item[current]
-{
-	background-color: rgba(242,202,0,0.44);
-}
-.event-item[current]:before
-{
-	content: "";
-	position: absolute;
-	top: -1px;
-	right: 0;
-    left: 0;
-    border-bottom: 1px solid rgb(231,222,146);
-}
-.event-item[current]:after
-{
-	right: 0;
-	left: 0;
-	border-bottom: 1px solid rgb(231,222,146);
-}
 /* 笔记本列表 */
 .note-list
 {
@@ -288,7 +222,7 @@ body
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 250px;
+	left: 0;
 	font-size: 17px;
 	line-height: 1.7em;
 }
@@ -304,6 +238,8 @@ body
 }
 .note-item
 {
+	margin-left: 20px;
+	margin-right: 20px;
 	position: absolute;
 	top: 0;
 	right: 0;
