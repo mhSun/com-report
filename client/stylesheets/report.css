@@ -14,7 +14,7 @@ body
 {
 	position: relative;
 	width: 100%;
-	min-width: 950px;
+	min-width: 870px;
 	height: 100%;
 	min-height: 250px;
 	padding: 0;
@@ -35,7 +35,7 @@ body
 	height: 50px;
 	border-bottom: 1px solid #a3c3db;
 }
-.user-list, .one-list
+.user-list
 {
 	position: absolute;
 	top: 51px;
@@ -43,7 +43,7 @@ body
 	bottom: 0;
 	left: 0;
 }
-.user-list ul, .one-list ul
+.user-list ul
 {
 	width: 100%;
 	height: 100%;
@@ -53,7 +53,7 @@ body
 /* 用户列表 */
 .user-module
 {
-	width: 249px;
+	width: 269px;
 	border-right: 1px solid #c2c4c5;
 }
 .user-module>header
@@ -106,7 +106,7 @@ body
 	height: 35px;
 	position: absolute;
 	top: 20px;
-	left: 15px;
+	left: 25px;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAYAAADj79JYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEMjRCNDY4QUVEQUExMUUyQUFGQzhFNDQ0MEEyODk3NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEMjRCNDY4QkVEQUExMUUyQUFGQzhFNDQ0MEEyODk3NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQyNEI0Njg4RURBQTExRTJBQUZDOEU0NDQwQTI4OTc2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQyNEI0Njg5RURBQTExRTJBQUZDOEU0NDQwQTI4OTc2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+E31+eAAACmpJREFUeNrsXQlw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);
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -132,57 +132,45 @@ body
 {
 	display: inline-block;
 	line-height: 70px;
-	margin-left: 60px;
+	margin-left: 70px;
 	font-size: 20px;
 	font-weight: 400;
 }
 /* 记事本模块 */
 .note-module
 {
-	left: 250px;
+	left: 270px;
 	background-image: url(../img/bg-02.png);
 	background-repeat: repeat;
 }
 .note-module>header
 {
 	position: relative;
+	font-size: 21px;
+	font-weight: 400;
+	text-align: center;
 }
 .note-module label
 {
 	font-family: cursive;
 	color: #e19807;
 }
-.note-body
-{
-	position: absolute;
-	top: 51px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
 .note-time
 {
+	width: 200px;
 	height: 100%;
-	font-size: 21px;
-	font-weight: 400;
-	text-align: center;
 }
-.time-label
+.time-label, .event-label
 {
 	display: inline-block;
-	margin: 10px auto 0 auto;
+	margin: 12px auto 0 auto;
 	padding: 0 10px 5px 10px;
-	border-right: 1px solid #e19807;
-	border-bottom: 1px solid #e19807;
-	border-left: 1px solid #e19807;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
 }
 .time-label:hover
 {
 	color: rgb(209,141,6);
 }
-.time-label:after
+.time-label:after, .event-label:after
 {
 	content: "Y";
 	display: inline-block;
@@ -191,6 +179,14 @@ body
 	height: 11px;
 	overflow-y: hidden; 
 	margin-left: 10px;
+}
+.note-event
+{
+	width: 350px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 200px;
 }
 .note-new
 {
@@ -219,50 +215,52 @@ body
 .note-list
 {
 	position: absolute;
-	top: 0;
+	top: 51px;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	font-size: 17px;
-	line-height: 1.7em;
+	line-height: 1.5em;
 }
 .note-list>ul
 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	width: 100%;
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 .note-item
 {
+	min-height: 155px;
 	margin-left: 20px;
 	margin-right: 20px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 }
 .item-time
 {
 	height: 35px;
-	padding-right: 15px;
+	text-align: left;
+}
+.note-item.absolute .item-time
+{
 	text-align: right;
+}
+.item-time label
+{
 	line-height: 35px;
+	margin-left: 150px;
 }
 .item-title, .item-content, .item-progress, .item-risk
 {
 	height: auto;
-	min-height: 20%;
+	min-height: 25px;
 	position: relative;
-	padding: 0 8px;
+	margin-top: 5px;
 }
-.item-title
+.note-item.absolute .item-title, .note-item.absolute .item-content, .note-item.absolute .item-progress, .note-item.absolute .item-risk
 {
-	margin-top: 20px;
+	height: auto;
+	min-height: 15%;
+	margin-top: 10px;
 }
 .item-title>label, .item-content>label, .item-progress>label, .item-risk>label
 {
@@ -277,10 +275,5 @@ body
 }
 .edit-title, .edit-content, .edit-progress, .edit-risk
 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	text-indent: 48px;
 }

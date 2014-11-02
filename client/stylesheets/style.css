@@ -26,6 +26,15 @@ div[contenteditable]
 {
     outline: none;;
 }
+.absolute
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* scroll bar */
 ::-webkit-scrollbar {
     width:12px;
