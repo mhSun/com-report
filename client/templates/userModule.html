@@ -1,0 +1,22 @@
+<template name="userModule">
+    <div class="user-module">
+        <header>
+            <div class="user-search">
+                <input text="text" placeholder="搜索..."/>
+            </div>
+        </header>
+        <div class="user-list">
+            <ul class="unstyle pointer">
+                {{#each users}}
+                    {{> user}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="user">
+    <li class="user-item" {{current}}>
+        <label>{{name}}</label>
+    </li>
+</template>

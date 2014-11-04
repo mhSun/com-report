@@ -135,6 +135,7 @@ body
 	margin-left: 70px;
 	font-size: 20px;
 	font-weight: 400;
+	cursor: pointer;
 }
 /* 记事本模块 */
 .note-module

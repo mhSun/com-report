@@ -26,10 +26,10 @@ $(function(){
 
 	$(".user-item").click(function(event) {
 		/* Act on the event */
-		$(".user-item[current]").removeAttr("current");
-		$(this).attr('current', '');
+		// $(".user-item[current]").removeAttr("current");
+		// $(this).attr('current', '');
 
-		refresh_event();
+		// refresh_event();
 	});
 
 	$(".event-item").click(function(event) {
