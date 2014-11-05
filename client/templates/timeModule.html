@@ -1,0 +1,19 @@
+<template name="timeModule">
+    <div class="time-module">
+        <header></header>
+
+        <div class="time-list">
+            <ul class="unstyle pointer">
+                {{#each times}}
+                    {{> time}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="time">
+    <li class="time-item" {{current}}>
+        <label class="time-label pointer">{{start}} ~ {{end}}</label>
+    </li>
+</template>
