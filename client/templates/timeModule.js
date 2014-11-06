@@ -23,6 +23,8 @@ if (Meteor.isClient) {
 
 	Template.time.helpers({
 		current: function () {
+			Session.get("currentTime") || Session.set("currentTime", 0);
+			
 			return Session.equals("currentTime", this._id) ? "current" : '';
 	    }
 	});

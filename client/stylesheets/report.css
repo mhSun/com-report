@@ -42,6 +42,7 @@ body
 	right: 0;
 	bottom: 0;
 	left: 0;
+	border-right: 1px solid #c2c4c5;
 }
 .user-list ul, .time-list ul
 {
@@ -141,8 +142,9 @@ body
 .time-module
 {
 	left: 250px;
-	width: 249px;
-	border-right: 1px solid #c2c4c5;
+	width: 250px;
+	background-image: url(../img/bg-02.png);
+	background-repeat: repeat;
 }
 .time-module label
 {

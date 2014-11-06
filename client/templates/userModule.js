@@ -7,7 +7,7 @@ if (Meteor.isClient) {
 
 	Template.userModule.helpers({
 		users: function () {
-			// return Users.find();
+			return Users.find({});
 			return [{_id: 0, name: 'test1'}, 
 					{_id: 1, name: 'test2'}, 
 					{_id: 2, name: 'test3'}, 
@@ -23,6 +23,8 @@ if (Meteor.isClient) {
 
 	Template.user.helpers({
 		current: function () {
+			Session.get("currentUser") || Session.set("currentUser", 0);
+
 			return Session.equals("currentUser", this._id) ? "current" : '';
 	    }
 	});
@@ -37,14 +39,8 @@ if (Meteor.isClient) {
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
 
-	Meteor.startup(function () {
-		if (Users.find().count() === 0) {
-			var names = ["Ada Lovelace", "Grace Hopper", "Marie Curie", "Carl Friedrich Gauss", "Nikola Tesla", "Claude Shannon"];
-			_.each(names, function (name) {
-				Users.insert({
-					name: name
-				});
-			});
-		}
-	});
+	// Meteor.startup(function () {
+	// 	Users.insert({name: "test1"});
+	// 	Users.insert({name: "test2"});
+	// });
 }
