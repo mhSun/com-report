@@ -6,7 +6,7 @@
                 <ul class="event-list hide"></ul>
             </div>
             <div class="note-new">
-                <label class="new-label pointer"></label>
+                <label class="new-label pointer js-note-new"></label>
             </div>
         </header>
 
@@ -21,25 +21,25 @@
 </template>
 
 <template name="note">
-    <li class="note-item" {{current}}>
+    <li class="note-item js-note-item" _id="{{_id}}">
         <div class="item-time">
-            <label>{{time}}</label>
+            <label>{{updateAt}}</label>
         </div>
         <div class="item-title">
             <label>事件：</label>
-            <div class="edit-title" contenteditable="true">{{title}}</div>
+            <div class="edit-title title" name="title" contenteditable="true">{{title}}</div>
         </div>
         <div class="item-content">
             <label>内容：</label>
-            <div class="edit-content" contenteditable="true">{{content}}</div>
+            <div class="edit-content content" name="content" contenteditable="true">{{content}}</div>
         </div>
         <div class="item-progress">
             <label>进度：</label>
-            <div class="edit-progress" contenteditable="true">{{progress}}</div>
+            <div class="edit-progress progress" name="progress" contenteditable="true">{{progress}}</div>
         </div>
         <div class="item-risk">
             <label>风险：</label>
-            <div class="edit-risk" contenteditable="true">{{risk}}</div>
+            <div class="edit-risk risk" name="risk" contenteditable="true">{{risk}}</div>
         </div>
     </li>
 </template>

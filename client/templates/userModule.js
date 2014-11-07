@@ -1,29 +1,17 @@
-// Set up a collection to contain player information. On the server,
-// it is backed by a MongoDB collection named "players".
-
-Users = new Mongo.Collection("users");
+// Set up a collection to contain user information. On the server,
+// it is backed by a MongoDB collection named "users".
 
 if (Meteor.isClient) {
 
 	Template.userModule.helpers({
 		users: function () {
-			return Users.find({});
-			return [{_id: 0, name: 'test1'}, 
-					{_id: 1, name: 'test2'}, 
-					{_id: 2, name: 'test3'}, 
-					{_id: 3, name: 'test4'}, 
-					{_id: 4, name: 'test5'}, 
-					{_id: 5, name: 'test6'},
-					{_id: 6, name: 'test7'}, 
-					{_id: 7, name: 'test8'},  
-					{_id: 8, name: 'test9'}, 
-					{_id: 9, name: 'test10'}];
+			return Users.find();
 		}
 	});
 
 	Template.user.helpers({
 		current: function () {
-			Session.get("currentUser") || Session.set("currentUser", 0);
+			Session.get("currentUser") || Session.set("currentUser", Users.findOne()._id);
 
 			return Session.equals("currentUser", this._id) ? "current" : '';
 	    }
@@ -34,13 +22,27 @@ if (Meteor.isClient) {
 			Session.set("currentUser", this._id);
 		}
 	});
-}
 
-// On server startup, create some players if the database is empty.
-if (Meteor.isServer) {
+	$(function(){
 
-	// Meteor.startup(function () {
-	// 	Users.insert({name: "test1"});
-	// 	Users.insert({name: "test2"});
-	// });
+		$(".user-search input").change(function(event) {
+			/* Act on the event */
+			var search = $(".user-search input").val();
+			var user_list = $(".user-item");
+
+			if (search) {
+				var reg = new RegExp(search);
+				user_list.each(function(){
+					if(reg.test($(this).text())){
+						$(this).removeClass('hide');
+					} else {
+						$(this).addClass('hide');
+					}
+				});
+			} else {
+				user_list.removeClass('hide');
+			}
+		});
+
+	});
 }

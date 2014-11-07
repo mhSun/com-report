@@ -1,24 +1,45 @@
-// Set up a collection to contain player information. On the server,
-// it is backed by a MongoDB collection named "players".
-
-Notes = new Mongo.Collection("notes");
 
 if (Meteor.isClient) {
 
 	Template.noteModule.helpers({
 		notes: function () {
-			// return Users.find();
-			return [{_id: 0, time: '2014年11月3日 20:20:20', title: 'title', content: 'content', progress: 'progress', risk: 'risk'},
-					{_id: 1, time: '2014年11月3日 20:30:30', title: 'title', content: 'content', progress: 'progress', risk: 'risk'},
-					{_id: 2, time: '2014年11月3日 20:30:30', title: 'title', content: 'content', progress: 'progress', risk: 'risk'},
-					{_id: 3, time: '2014年11月3日 20:30:30', title: 'title', content: 'content', progress: 'progress', risk: 'risk'},
-					{_id: 4, time: '2014年11月3日 20:40:40', title: 'title', content: 'content', progress: 'progress', risk: 'risk'}];
+			return Notes.find({}, {sort: {createAt: 1}});
 		}
 	});
 
-	Template.note.helpers({
-		current: function () {
-			return Session.equals("currentNote", this._id) ? "current" : '';
+	Template.noteModule.events({
+		"click .js-note-new": function () {
+			Notes.insert(
+				{title: '新建事件', content: '', progress: '', risk: '', timeId: '', createBy: '', createAt: new Date(), updateAt: new Date()}
+			);
+		}
+	});
+
+	Template.note.events({
+		'blur': function (events) {
+			var key = events.target.classList[1];
+			var value = events.target.innerHTML;
+
+			if (key === "title") {
+				Notes.update(this._id,
+					{$set: {title: value, updateAt: new Date()}}
+				);
+			} else if (key === "content") {
+				Notes.update(this._id,
+					{$set: {content: value, updateAt: new Date()}}
+				);
+			} else if (key === "progress") {
+				Notes.update(this._id,
+					{$set: {progress: value, updateAt: new Date()}}
+				);
+			} else if (key === "risk") {
+				Notes.update(this._id,
+					{$set: {risk: value, updateAt: new Date()}}
+				);
+			}
+
+			events.stopPropagation();
 	    }
 	});
+
 }
