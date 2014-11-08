@@ -3,14 +3,23 @@ if (Meteor.isClient) {
 
 	Template.noteModule.helpers({
 		notes: function () {
-			return Notes.find({}, {sort: {createAt: 1}});
+			return Notes.find({createBy: Session.get("currentUser"), timeId: Session.get("currentTime")}, {sort: {createAt: 1}});
 		}
 	});
 
 	Template.noteModule.events({
 		"click .js-note-new": function () {
 			Notes.insert(
-				{title: '新建事件', content: '', progress: '', risk: '', timeId: '', createBy: '', createAt: new Date(), updateAt: new Date()}
+				{
+					title: '新建事件', 
+					content: '', 
+					progress: '', 
+					risk: '', 
+					timeId: Session.get("currentTime"), 
+					createBy: Session.get("currentUser"), 
+					createAt: new Date(), 
+					updateAt: new Date()
+				}
 			);
 		}
 	});
@@ -19,7 +28,7 @@ if (Meteor.isClient) {
 		'blur': function (events) {
 			var key = events.target.classList[1];
 			var value = events.target.innerHTML;
-
+			
 			if (key === "title") {
 				Notes.update(this._id,
 					{$set: {title: value, updateAt: new Date()}}
@@ -39,6 +48,7 @@ if (Meteor.isClient) {
 			}
 
 			events.stopPropagation();
+			// return false;
 	    }
 	});
 
