@@ -5,13 +5,13 @@ if (Meteor.isClient) {
 
 	Template.userModule.helpers({
 		users: function () {
-			return Users.find();
+			return Meteor.users.find();
 		}
 	});
 
 	Template.user.helpers({
 		current: function () {
-			Session.get("currentUser") || Session.set("currentUser", Users.findOne()._id);
+			Session.get("currentUser") || Session.set("currentUser", Meteor.users.findOne()._id);
 
 			return Session.equals("currentUser", this._id) ? "current" : '';
 	    }

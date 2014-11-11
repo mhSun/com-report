@@ -35,7 +35,7 @@ body
 	height: 50px;
 	border-bottom: 1px solid #a3c3db;
 }
-.user-list, .time-list
+.user-list
 {
 	position: absolute;
 	top: 51px;
@@ -138,15 +138,17 @@ body
 	font-weight: 400;
 	cursor: pointer;
 }
-/* 时间模块 */
-.time-module
+/* 时间列表 */
+.time-list
 {
-	left: 250px;
 	width: 250px;
-	background-image: url(../img/bg-02.png);
-	background-repeat: repeat;
+	position: absolute;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	border-right: 1px solid #c2c4c5;
 }
-.time-module label
+.time-list label
 {
 	font-family: cursive;
 	color: #e19807;
@@ -184,7 +186,7 @@ body
 /* 记事本模块 */
 .note-module
 {
-	left: 500px;
+	left: 250px;
 	background-image: url(../img/bg-02.png);
 	background-repeat: repeat;
 }
@@ -199,30 +201,6 @@ body
 {
 	font-family: cursive;
 	color: #e19807;
-}
-.note-event
-{
-	width: 400px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-}
-.event-label
-{
-	display: inline-block;
-	margin: 12px auto 0 auto;
-	padding: 0 10px 5px 10px;
-}
-.event-label:after
-{
-	content: "Y";
-	display: inline-block;
-	font-size: 17px;
-	line-height: 1em;
-	height: 11px;
-	overflow-y: hidden; 
-	margin-left: 10px;
 }
 .note-new
 {
@@ -254,7 +232,7 @@ body
 	top: 51px;
 	right: 0;
 	bottom: 0;
-	left: 0;
+	left: 250px;
 	font-size: 17px;
 	line-height: 1.5em;
 }
@@ -274,7 +252,7 @@ body
 .item-time
 {
 	height: 35px;
-	text-align: left;
+	text-align: center;
 }
 .note-item[current]
 {
@@ -291,7 +269,6 @@ body
 .item-time label
 {
 	line-height: 35px;
-	margin-left: 150px;
 }
 .item-title, .item-content, .item-progress, .item-risk
 {

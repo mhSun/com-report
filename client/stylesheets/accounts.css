@@ -1,0 +1,40 @@
+.account-in
+{
+	width: 250px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	line-height: 50px;
+}
+.account-in #login-dropdown-list
+{
+	top: 40px;
+}
+.account-out
+{
+	width: 110px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	padding-left: 50px;
+}
+.account-out #login-dropdown-list
+{
+	top: 50px;
+	left: -170px;
+}
+.account-out #login-buttons .login-close-text
+{
+	margin-top: -10px;
+	margin-right: 15px;
+	float: right;
+	padding-bottom: 0;
+}
+.account-out #login-buttons
+{
+	line-height: 50px;
+}

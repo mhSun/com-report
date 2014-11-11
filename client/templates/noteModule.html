@@ -1,14 +1,23 @@
 <template name="noteModule">
     <div class="note-module">
         <header>
-            <div class="note-event">
-                <label class="event-label pointer">事件列表，默认全部</label>
-                <ul class="event-list hide"></ul>
+            <div class="{{status}}">
+                {{> loginButtons}}
             </div>
-            <div class="note-new">
-                <label class="new-label pointer js-note-new"></label>
-            </div>
+            {{#if currentUser}}
+                <div class="note-new">
+                    <label class="new-label pointer js-note-new"></label>
+                </div>
+            {{/if}}
         </header>
+
+        <div class="time-list">
+            <ul class="unstyle pointer">
+                {{#each times}}
+                    {{> time}}
+                {{/each}}
+            </ul>
+        </div>
 
         <div class="note-list">
             <ul class="unstyle">
@@ -20,6 +29,12 @@
     </div>
 </template>
 
+<template name="time">
+    <li class="time-item" {{current}}>
+        <label class="time-label pointer">{{start}} ~ {{end}}</label>
+    </li>
+</template>
+
 <template name="note">
     <li class="note-item js-note-item" _id="{{_id}}">
         <div class="item-time">
@@ -27,19 +42,19 @@
         </div>
         <div class="item-title">
             <label>事件：</label>
-            <div class="edit-title title" name="title" contenteditable="true">{{title}}</div>
+            <div class="edit-title title" name="title" contenteditable="{{editable}}">{{title}}</div>
         </div>
         <div class="item-content">
             <label>内容：</label>
-            <div class="edit-content content" name="content" contenteditable="true">{{content}}</div>
+            <div class="edit-content content" name="content" contenteditable="{{editable}}">{{content}}</div>
         </div>
         <div class="item-progress">
             <label>进度：</label>
-            <div class="edit-progress progress" name="progress" contenteditable="true">{{progress}}</div>
+            <div class="edit-progress progress" name="progress" contenteditable="{{editable}}">{{progress}}</div>
         </div>
         <div class="item-risk">
             <label>风险：</label>
-            <div class="edit-risk risk" name="risk" contenteditable="true">{{risk}}</div>
+            <div class="edit-risk risk" name="risk" contenteditable="{{editable}}">{{risk}}</div>
         </div>
     </li>
 </template>
