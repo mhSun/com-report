@@ -202,28 +202,41 @@ body
 	font-family: cursive;
 	color: #e19807;
 }
-.note-new
+.note-button
 {
-	width: 50px;
+	width: 200px;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 25px;
 	bottom: 0;
+	text-align: right;
 }
-.new-label
+.note-button button
 {
-	width: 40px;
-	height: 33px;
 	display: inline-block;
-	margin-top: 5px;
+	width: auto;
+	margin-top: 13px;
+	padding: 6px 8px;
+	border: 1px solid #e19807;
+	color: #e19807;
+	outline-style: none;
+	background-color: inherit;
+}
+.note-edit
+{
+	position: absolute;
+	top: -3px;
+	width: 40px;
+	height: 25px;
+	display: inline-block;
 	background-size: 108px 591px;
     background-image: url('../img/packed-1@2x.png');
-    background-position: -42px -304px;
+    background-position: -42px -311px;
     background-repeat: no-repeat;
 }
-.new-label:hover
+.note-edit:hover
 {
-	background-position: -42px -346px;
+	background-position: -42px -353px;
 }
 /* 笔记本列表 */
 .note-list
@@ -261,10 +274,6 @@ body
     right: 0;
     bottom: 0;
     left: 0;
-}
-.note-item.absolute .item-time
-{
-	text-align: right;
 }
 .item-time label
 {

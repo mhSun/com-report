@@ -5,8 +5,11 @@
                 {{> loginButtons}}
             </div>
             {{#if currentUser}}
-                <div class="note-new">
-                    <label class="new-label pointer js-note-new"></label>
+                <div class="note-button">
+                    <button class="note-new pointer js-note-new">New</button>
+                    <button class="note-save pointer js-note-save hide">Save</button>
+                    <button class="note-cancel pointer js-note-cancel hide">Cancel</button>
+                    <button class="note-delete pointer js-note-delete hide">Delete</button>
                 </div>
             {{/if}}
         </header>
@@ -42,19 +45,22 @@
         </div>
         <div class="item-title">
             <label>事件：</label>
-            <div class="edit-title title" name="title" contenteditable="{{editable}}">{{title}}</div>
+            <div class="edit-title js-edit-title" name="title">
+                {{title}}
+                <label class="note-edit pointer js-note-edit {{editable}}"></label>
+            </div>
         </div>
         <div class="item-content">
             <label>内容：</label>
-            <div class="edit-content content" name="content" contenteditable="{{editable}}">{{content}}</div>
+            <div class="edit-content js-edit-content" name="content">{{content}}</div>
         </div>
         <div class="item-progress">
             <label>进度：</label>
-            <div class="edit-progress progress" name="progress" contenteditable="{{editable}}">{{progress}}</div>
+            <div class="edit-progress js-edit-progress" name="progress">{{progress}}</div>
         </div>
         <div class="item-risk">
             <label>风险：</label>
-            <div class="edit-risk risk" name="risk" contenteditable="{{editable}}">{{risk}}</div>
+            <div class="edit-risk js-edit-risk" name="risk">{{risk}}</div>
         </div>
     </li>
 </template>

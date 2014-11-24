@@ -1,11 +1,11 @@
 .account-in
 {
-	width: 250px;
+	width: 500px;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 0;
-	text-align: center;
+	left: 25px;
+	text-align: left;
 	line-height: 50px;
 }
 .account-in #login-dropdown-list
